@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Филиалы</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="index">
+                <a href="index.html">
+                    <img src="media/images/logo.png">
+                    Индекс Драйв
+                </a>
+            </div>
+            <div class="menu">
+                <a href="branches.html">Филиалы</a>
+                <a href="booking.html">Бронирование</a>
+                <a href="profile.html">ЛК</a>
+            </div>
+            <div class="account">
+                <a href="profile.html">логин</a>
+            </div>
+            <button class="menu-button"></button>
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="side-menu__container">
+            <a href="cards.html"></a>
+            <a href="booking.html"></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content__container">
+            <div class="account-show">
+                <ul class="ac-menu">
+                    <li class="ac-menu-link">Аккаунт</li>
+                    <li class="ac-menu-link">Смена имени</li>
+                    <li class="ac-menu-link">Выйти</li>
+                </ul>
+                <div class="ac-content">
+                    <section class="ac-section">
+                        <div class="ac-overview">
+                            <div class="ac-name">логин</div>
+                            <div class="ac-reg-date">Дата регистрации: dd-mm-yyyy</div>
+                            <div class="ac-check-counter">Количество заказов: n</div>
+                            <div class="ac-img"><img src="media/images/roads/empty-highway-asphalt-road-beautiful-sky_51195-3950.jpg"></div>
+                        </div>
+                    </section>
+                    <section class="ac-section">
+                        <div class="ac-settings">
+                            <form name="name-change" id="name-change-form" method="POST">
+                                <label>Логин</label><input type="text" class="ac-name-change">
+                                <label>Пароль</label><input type="password" class="ac-password">
+                                <label>Повторите пароль</label><input type="password" class="ac-password-repeat">
+                            </form>
+                            <input type="submit" value="Подтвердить" form="name-change">
+                        </div>
+                    </section>
+                    <section class="ac-section">
+                        <div class="ac-logout">
+                            <div class="ac-logout-text">Вы уверены, что хотите выйти из аккаунта?</div>
+                            <div class="ac-logout-button"><button>Выйти</button></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer__container">
+            <ul class="footer-link">
+                <li>Телефон:</li>
+                <li><a>8-800-555-35-35</a></li>
+            </ul>
+            <ul class="footer-link">
+                <li>Аккаунт:</li>
+                <li><a href="profile.html">Личный кабинет</a></li>
+                <li><a href="cards.html">Привязанные карты</a></li>
+                <li><a href="login.html">Вход/Выход/Регистрация</a></li>
+            </ul>
+            <ul class="footer-link">
+                <li>Сайт:</li>
+                <li><a href="booking.html">Бронирование</a></li>
+                <li><a href="history.html">История бронирования</a></li>
+                <li><a href="branches.html">Филиалы</a></li>
+                <li><a href="index.html">Главная</a></li>
+            </ul>
+        </div>
+    </footer>
+    <h1 class="wow">Мы не рассматривали вариант существования вашего устройства.</h1>
+    <script src="static/show_page.js"></script>
+</body>
+</html>
