@@ -1,4 +1,3 @@
-const dom = document;
 if (!sessionStorage.getItem("session_start")){
     header = dom.querySelector("header");
     banner_text = dom.querySelector(".banner__container");

@@ -33,6 +33,8 @@ header{
     color: white;
     top: 0;
     animation-name: slideintop;
+    border-bottom: #1C1B22;
+    box-shadow: 0 0 100px rgba(0,0,0,0.3);
 }
 .header__container {
     height: inherit;
@@ -82,14 +84,34 @@ header{
 }
 .menu-button{
     display: none;
+    justify-content: center;
+    align-items: center;
+}
+.menu-button i{
+    font-size: xx-large;
 }
 .side-menu {
-    height: 100%;
+    height: 100vh;
     width: 20vw;
-    position: absolute;
-    visibility: hidden;
+    position: fixed;
+    display: none;
+    right: -20vw;
+    top: 0;
+    background-color: #36353E;
+    border-right: #1C1B22;
+    z-index: 9;
+}
+.side-menu__trigger{
+    height: 100vh;
+    width: 5vw;
+    position: fixed;
     right: 0;
     top: 0;
+    z-index: 9;
+}
+.-slided{
+    right: 0;
+    display: flex;
 }
 .banner{
     box-sizing: border-box;
@@ -206,7 +228,7 @@ header{
 .cat-item{
     height: 43vh;
     display: grid;
-    grid-template-rows: 20% 45% 10% 25%;
+    grid-template-rows: 20% 45% 10% 15% 10%;
     padding: 10px;
     border: #1C1B22 solid 1px;
     border-radius: 10px;
@@ -240,11 +262,14 @@ header{
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+.cat-button{
+
+}
 .page-opener{
-    position: absolute;
     cursor: pointer;
 }
 i.page-opener{
+    position: absolute;
     width: 20px;
     height: 20px;
 }
@@ -258,11 +283,15 @@ i.page-opener{
 }
 .fel-list{
     border-top: #FBFF45 solid 5px;
+    min-height: 80vh;
+    height: 100%;
+    display: flex;
+}
+.fel-list__container{
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 80vh;
 }
 .fel{
     display: grid;
@@ -276,26 +305,21 @@ i.page-opener{
 }
 .fel:nth-child(1):hover{
     background-color: lightcoral;
-    cursor: pointer;
 }
 .fel:nth-child(2):hover{
     background-color: lightgreen;
-    cursor: pointer;
 }
 .fel:nth-child(3):hover{
     background-color: floralwhite;
-    cursor: pointer;
 }
 .fel:nth-child(4):hover{
     background-color: turquoise;
-    cursor: pointer;
 }
 .fel:nth-child(5):hover{
     background-color: orange;
-    cursor: pointer;
 }
 .fel:hover .fel-name, .fel:hover .fel-adress{
-    filter: invert(1);
+    color: black;
 }
 .fel-image{
     height: 100%;
@@ -378,7 +402,6 @@ footer{
     background-color: #1C1B22;
     flex-direction: row;
     justify-content: space-around;
-    gap: 20px;
     height: 100%;
 }
 .footer-link {
@@ -426,6 +449,14 @@ footer{
         top: 0;
     }
 }
+@keyframes slideinright {
+    from{
+        right: -20vw;
+    }
+    to{
+        right: 0;
+    }
+}
 @keyframes textslide {
     from{
         margin-left: 50vw;
@@ -443,7 +474,7 @@ footer{
     .search{
         flex-direction: column;
     }
-    .news{
+    .news, .catalog{
         grid-template-columns: 1fr 1fr;
     }
     .account-show{
@@ -459,6 +490,27 @@ footer{
         border: 1px solid black;
         margin: 0;
     }
+    .fel-list__container{
+        flex-direction: column;
+    }
+    .fel:nth-child(1){
+        background-color: lightcoral;
+    }
+    .fel:nth-child(2){
+        background-color: lightgreen;
+    }
+    .fel:nth-child(3){
+        background-color: floralwhite;
+    }
+    .fel:nth-child(4){
+        background-color: turquoise;
+    }
+    .fel:nth-child(5){
+        background-color: orange;
+    }
+    .fel-name, .fel-adress{
+        color: black;
+    }
 }
 @media screen and (max-width:870px){
     .search img{
@@ -471,21 +523,24 @@ footer{
         flex-direction: column;
     }
     .menu{
-        visibility: hidden;
+        display: none;
     }
     .account{
         display: none;
     }
     .menu-button{
-        display: block;
+        display: flex;
+    }
+    .header__container{
+        grid-template-columns: 80% 1fr;
     }
 }
 @media screen and (max-width: 380px){
-    .news{
+    .news, .catalog{
         grid-template-columns: 1fr;
     }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 300px), screen and (max-height: 570px) {
     *{
         display: none;
     }

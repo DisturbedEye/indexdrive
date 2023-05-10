@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
     <title>Филиалы</title>
+    <script>
+        function loadScript(url)
+        {    
+            let head = document.getElementsByTagName('head')[0];
+            let script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            head.appendChild(script);
+        }
+        loadScript("static/generic.js");
+        loadScript("static/index_only.js");
+    </script>
 </head>
 <body>
     <header>
@@ -18,50 +31,56 @@
             </div>
             <div class="menu">
                 <a href="branches.html">Филиалы</a>
-                <a href="booking.html">Бронирование</a>
+                <a href="car-select.html">Автомобили</a>
                 <a href="profile.html">ЛК</a>
             </div>
             <div class="account">
                 <a href="profile.html">логин</a>
             </div>
-            <button class="menu-button"></button>
+            <a class="menu-button"><i class="fas fa-th-list"></i></a>
         </div>
     </header>
+    <div class="side-menu__trigger"></div>
     <div class="side-menu">
         <div class="side-menu__container">
             <a href="cards.html"></a>
             <a href="booking.html"></a>
+            <a href="branches.html"></a>
+            <a href="booking.html"></a>
+            <a href="profile.html"></a>
         </div>
     </div>
     <div class="content">
         <div class="content__container">
             <h2>Выберите ваш филиал</h2>
             <div class="fel-list">
-                <a class="fel" onclick=>
-                    <div class="fel-name">имяфелиала1</div>
-                    <img class="fel-image" src="media/images/maps/Kras.png">
-                    <div class="fel-adress">адрес</div>
-                </a>
-                <a class="fel" onclick=>
-                    <div class="fel-name">тыкто</div>
-                    <img class="fel-image" src="media/images/maps/Moskow.png">
-                    <div class="fel-adress">адрес</div>
-                </a>
-                <a class="fel" onclick=>
-                    <div class="fel-name">что</div>
-                    <img class="fel-image" src="media/images/maps/Novos.png">
-                    <div class="fel-adress">адрес</div>
-                </a>
-                <a class="fel" onclick=>
-                    <div class="fel-name">Новая папка (5)</div>
-                    <img class="fel-image" src="media/images/maps/Piter.png">
-                    <div class="fel-adress">адрес</div>
-                </a>
-                <a class="fel" onclick=>
-                    <div class="fel-name">Flowgorithm-exe-only</div>
-                    <img class="fel-image" src="media/images/maps/Томск.png">
-                    <div class="fel-adress">адрес</div>
-                </a>
+                <div class="fel-list__container">
+                    <a class="fel page-opener page1">
+                        <div class="fel-name page-opener page1">имяфелиала1</div>
+                        <img class="fel-image page-opener page1" src="media/images/maps/Kras.png">
+                        <div class="fel-adress page-opener page1">адрес</div>
+                    </a>
+                    <a class="fel page-opener page1">
+                        <div class="fel-name page-opener page1">тыкто</div>
+                        <img class="fel-image page-opener page1" src="media/images/maps/Moskow.png">
+                        <div class="fel-adress page-opener page1">адрес</div>
+                    </a>
+                    <a class="fel page-opener page1">
+                        <div class="fel-name page-opener page1">что</div>
+                        <img class="fel-image page-opener page1" src="media/images/maps/Novos.png">
+                        <div class="fel-adress page-opener page1">адрес</div>
+                    </a>
+                    <a class="fel page-opener page1">
+                        <div class="fel-name page-opener page1">Новая папка (5)</div>
+                        <img class="fel-image page-opener page1" src="media/images/maps/Piter.png">
+                        <div class="fel-adress page-opener page1">адрес</div>
+                    </a>
+                    <a class="fel page-opener page1">
+                        <div class="fel-name page-opener page1">Flowgorithm-exe-only</div>
+                        <img class="fel-image page-opener page1" src="media/images/maps/Томск.png">
+                        <div class="fel-adress page-opener page1">адрес</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -87,6 +106,8 @@
         </div>
     </footer>
     <h1 class="wow">Мы не рассматривали вариант существования вашего устройства.</h1>
-    <script src="static/show_page.js"></script>
+    <section class="page page1">
+        <i class="fas fa-window-close page-closer page1"></i>
+    </section>
 </body>
 </html>
