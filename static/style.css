@@ -16,6 +16,10 @@ html{
 body{
     overflow: overlay;
     background-color: #26252E;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 body::-webkit-scrollbar{
     width: 0;
@@ -27,6 +31,8 @@ header{
     background-color: #26252E;
     width: 100vw;
     color: white;
+    top: 0;
+    animation-name: slideintop;
 }
 .header__container {
     height: inherit;
@@ -109,6 +115,7 @@ header{
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
+    animation-name: textslide;
 }
 .search{
     display: flex;
@@ -205,7 +212,7 @@ header{
     border-radius: 10px;
     background-color: #36353E;
 }
-.cat-item div:nth-child(2), .cat-item div:nth-child(4){
+.cat-item div:nth-child(3), .cat-item div:nth-child(5){
     border-bottom: 1px #1C1B22 solid;
     border-top: 1px #1C1B22 solid;
 }
@@ -232,6 +239,22 @@ header{
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+.page-opener{
+    position: absolute;
+    cursor: pointer;
+}
+i.page-opener{
+    width: 20px;
+    height: 20px;
+}
+.page-closer{
+    width: 30px;
+    height: 30px;
+    font-size: x-large;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 .fel-list{
     border-top: #FBFF45 solid 5px;
@@ -281,8 +304,7 @@ header{
 }
 .account-show{
     min-height: 90vh;
-    margin-left: 25vw;
-    width: 50%;
+    width: 50vw;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 30% 70%;
@@ -346,9 +368,9 @@ header{
     min-height: 80vh;
 }
 footer{
-    position: absolute;
     height: fit-content;
     width: 100%;
+    margin-top: auto;
 }
 .footer__container{
     font-size: large;
@@ -371,6 +393,51 @@ footer{
 }
 .wow{
     display: none;
+}
+.page{
+    display: none;
+    top: 10vh;
+    position: fixed;
+    height: 89vh;
+    width: 99vw;
+    background-color: #36353E;
+    border-radius: 10px;
+    border: 1px solid #1C1B22;
+}
+.page.-visible{
+    display: flex;
+    animation: 0.5s appear alternate;
+}
+@keyframes appear {
+    from{
+        opacity: 0;
+        margin-top: 10px;
+    }
+    to{
+        opacity: 100%;
+        margin-top: 0;
+    }
+}
+@keyframes slideintop {
+    from{
+        top: -10vh;
+    }
+    to{
+        top: 0;
+    }
+}
+@keyframes textslide {
+    from{
+        margin-left: 50vw;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    50%{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to{
+        margin-left: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 }
 @media screen and (max-width: 1136px) {
     .search{
