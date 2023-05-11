@@ -20,6 +20,7 @@ body{
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    justify-content: center;
 }
 body::-webkit-scrollbar{
     width: 0;
@@ -54,7 +55,7 @@ header{
     justify-content: start;
 }
 .index a img {
-    height: 9vh;
+    height: 50px;
 }
 .menu{
     display: flex;
@@ -83,35 +84,50 @@ header{
     align-items: center;
 }
 .menu-button{
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    width: 100px;
 }
 .menu-button i{
     font-size: xx-large;
 }
 .side-menu {
-    height: 100vh;
+    height: 90vh;
     width: 20vw;
     position: fixed;
-    display: none;
+    display: flex;
+    justify-content: flex-end;
     right: -20vw;
-    top: 0;
+    bottom: 0;
     background-color: #36353E;
-    border-right: #1C1B22;
-    z-index: 9;
+    border-left: #26252E 1px solid;
+    transition: right 0.2s ease-in;
+    z-index: 5;
+}
+.side-menu__container{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    font-size: large;
+}
+.side-menu__container a{
+    padding: 5px 10px;
 }
 .side-menu__trigger{
     height: 100vh;
-    width: 5vw;
+    width: 5px;
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 9;
+    z-index: 5;
 }
 .-slided{
     right: 0;
-    display: flex;
+}
+.replacements{
+    display: none;
 }
 .banner{
     box-sizing: border-box;
@@ -188,7 +204,7 @@ header{
 }
 .new{
     display: grid;
-    height: 40vh;
+    height: 25em;
     grid-template-rows: 15% 25% 60%;
     padding: 10px;
     border: #1C1B22 solid 1px;
@@ -202,9 +218,6 @@ header{
 .new-name{
     font-size: larger;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 }
 .new-image img{
     object-fit: cover;
@@ -241,10 +254,6 @@ header{
 .cat-name{
     text-align: center;
     font-size: larger;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 }
 .cat-image img{
     object-fit: cover;
@@ -262,9 +271,6 @@ header{
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
-.cat-button{
-
-}
 .page-opener{
     cursor: pointer;
 }
@@ -277,8 +283,7 @@ i.page-opener{
     width: 30px;
     height: 30px;
     font-size: x-large;
-    position: absolute;
-    right: 0;
+    position: relative;
     cursor: pointer;
 }
 .fel-list{
@@ -302,23 +307,32 @@ i.page-opener{
     justify-items: center;
     height: 100%;
     width: 100%;
+    transition: all .3s ease-out;
+    background-repeat: no-repeat;
+    transition: background-size .3s;
+    background-position: 50% 50%;
+    background-size: 100% 0;
 }
-.fel:nth-child(1):hover{
-    background-color: lightcoral;
+.fel:nth-child(1){
+    background-image: linear-gradient(lightcoral, lightcoral);
 }
-.fel:nth-child(2):hover{
-    background-color: lightgreen;
+.fel:nth-child(2){
+    background-image: linear-gradient(lightgreen, lightgreen);
 }
-.fel:nth-child(3):hover{
-    background-color: floralwhite;
+.fel:nth-child(3){
+    background-image: linear-gradient(floralwhite, floralwhite);
 }
-.fel:nth-child(4):hover{
-    background-color: turquoise;
+.fel:nth-child(4){
+    background-image: linear-gradient(turquoise, turquoise);
 }
-.fel:nth-child(5):hover{
-    background-color: orange;
+.fel:nth-child(5){
+    background-image: linear-gradient(orange, orange);
+}
+.fel:hover{
+    background-size: 100% 100%;
 }
 .fel:hover .fel-name, .fel:hover .fel-adress{
+    transition: color .3s;
     color: black;
 }
 .fel-image{
@@ -331,7 +345,6 @@ i.page-opener{
     width: 50vw;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 30% 70%;
 }
 .ac-menu{
     display: flex;
@@ -377,11 +390,20 @@ i.page-opener{
     object-fit: cover;
     border-radius: 100%;
 }
-#name-change-form{
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+.generic-button{
+    padding: 5px;
+    border: #FBFF45 3px solid;
+    border-radius: 10px;
+    color: #FBFF45;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+}
+.ac-logout-button{
+    border: 3px solid salmon;
+    color: salmon;
 }
 .history{
     width: 50vw;
@@ -421,14 +443,74 @@ footer{
     display: none;
     top: 10vh;
     position: fixed;
-    height: 89vh;
-    width: 99vw;
+    min-height: 90vh;
+    width: 100vw;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    backdrop-filter: blur(0);
+}
+.page__container{
+    overflow: scroll;
     background-color: #36353E;
     border-radius: 10px;
     border: 1px solid #1C1B22;
+    height: fit-content;
+    width: 60vw;
+}
+.page__container::-webkit-scrollbar{
+    width: 0;
+}
+.ac-logout-page{
+    height: 40vh;
+    width: 40vw;
+    top: 30vh;
+    box-shadow: rgba(0,0,0,0.2) 0 0 100px;
+}
+.ac-logout-page-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ac-logout-page-content .ac-logout-button{
+    margin: 20px;
+    justify-self: flex-end;
+}
+.ac-logout-page-content .ac-logout-text{
+    padding: 20px;
+}
+.new-page-content{
+    height: 60vh;
+    width: 100%;
+    padding: 10px;
+}
+.new-page-content div:nth-child(2){
+    border-bottom: 1px #1C1B22 solid;
+    border-top: 1px #1C1B22 solid;
+}
+.new-page-content .new-name{
+    overflow: visible;
+    display: block;
+}
+.new-page-content .new-image img{
+    max-height: 400px;
+    object-fit: contain;
+}
+.new-page-content .new-description{
+    text-align: justify;
+    overflow-wrap: break-word;
+    overflow: visible;
+    display: block;
 }
 .page.-visible{
     display: flex;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    animation: 0.5s pappear alternate;
+}
+.page.-visible .page__container{
     animation: 0.5s appear alternate;
 }
 @keyframes appear {
@@ -441,20 +523,22 @@ footer{
         margin-top: 0;
     }
 }
+@keyframes pappear {
+    from{
+        background-color: rgba(0,0,0,0);
+        backdrop-filter: blur(0);
+    }
+    to{
+        background-color: rgba(0,0,0,0.2);
+        backdrop-filter: blur(5px);
+    }
+}
 @keyframes slideintop {
     from{
         top: -10vh;
     }
     to{
         top: 0;
-    }
-}
-@keyframes slideinright {
-    from{
-        right: -20vw;
-    }
-    to{
-        right: 0;
     }
 }
 @keyframes textslide {
@@ -528,11 +612,21 @@ footer{
     .account{
         display: none;
     }
-    .menu-button{
-        display: flex;
+    .replacements{
+        display: block;
     }
     .header__container{
-        grid-template-columns: 80% 1fr;
+        grid-template-columns: 70% 1fr;
+    }
+    .side-menu{
+        width: 80vw;
+        right: -80vw;
+    }
+    .-slided{
+        right: 0;
+    }
+    .page__container{
+        width: 100vw;
     }
 }
 @media screen and (max-width: 380px){
@@ -540,7 +634,45 @@ footer{
         grid-template-columns: 1fr;
     }
 }
-@media screen and (max-width: 300px), screen and (max-height: 570px) {
+@media screen and (max-height: 530px) {
+    header{
+        height: 15vh;
+        font-size: 5vh;
+    }
+    .side-menu{
+        overflow: scroll;
+        height: 85vh;
+    }
+    .side-menu::-webkit-scrollbar{
+        width: 0;
+    }
+    .page{
+        top: 15vh;
+    }
+    .page__container{
+        top: -10vh;
+    }
+    .banner__container{
+        font-size: medium;
+    }
+}
+@media screen and (max-height: 365px) {
+    header{
+        height: 25vh;
+        font-size: 5vh;
+    }
+    .side-menu{
+        overflow: scroll;
+        height: 75vh;
+    }
+    .side-menu::-webkit-scrollbar{
+        width: 0;
+    }
+    .page{
+        top: 18vh;
+    }
+}
+@media screen and (max-width: 319px), screen and (max-height: 239px) {
     *{
         display: none;
     }
@@ -553,6 +685,9 @@ footer{
         justify-content: center;
         align-items: center;
         height: inherit;
+    }
+    .side-menu{
+        display: none;
     }
     .wow{
         height: fit-content;

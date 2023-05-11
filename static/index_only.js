@@ -16,4 +16,4 @@ if (!sessionStorage.getItem("session_start")){
         headerstyle.top = "0";
         bannertextstyle.visibility = "visible";
     }, 1000);
-};
+}

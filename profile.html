@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <title>Филиалы</title>
+    <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
+    <title>Индекс Драйв</title>
     <script>
         function loadScript(url)
         {    
@@ -16,7 +17,6 @@
             head.appendChild(script);
         }
         loadScript("static/generic.js");
-        loadScript("static/index_only.js");
     </script>
 </head>
 <body>
@@ -34,7 +34,7 @@
                 <a href="profile.html">ЛК</a>
             </div>
             <div class="account">
-                <a href="profile.html">логин</a>
+                <a href="profile.html" class="account-link">логин</a>
             </div>
             <a class="menu-button"><i class="fas fa-th-list"></i></a>
         </div>
@@ -42,53 +42,26 @@
     <div class="side-menu__trigger"></div>
     <div class="side-menu">
         <div class="side-menu__container">
-            <a href="cards.html"></a>
-            <a href="booking.html"></a>
-            <a href="branches.html"></a>
-            <a href="booking.html"></a>
-            <a href="profile.html"></a>
-        </div>
-    </div>
-    <div class="side-menu">
-        <div class="side-menu__container">
-            <a href="cards.html"></a>
-            <a href="booking.html"></a>
+            <a href="cards.html">Карты</a>
+            <a href="booking.html">Бронирование</a>
+            <a href="history">История бронирования</a>
+            <a href="car-select.html" class="replacements">Автомобили</a>
+            <a href="branches.html" class="replacements">Филиалы</a>
+            <a href="profile.html" class="replacements">ЛК</a>
         </div>
     </div>
     <div class="content">
         <div class="content__container">
             <div class="account-show">
-                <ul class="ac-menu">
-                    <li class="ac-menu-link">Аккаунт</li>
-                    <li class="ac-menu-link">Смена имени</li>
-                    <li class="ac-menu-link">Выйти</li>
-                </ul>
-                <div class="ac-content">
-                    <section class="ac-section">
-                        <div class="ac-overview">
-                            <div class="ac-name">логин</div>
-                            <div class="ac-reg-date">Дата регистрации: dd-mm-yyyy</div>
-                            <div class="ac-check-counter">Количество заказов: n</div>
-                            <div class="ac-img"><img src="media/images/roads/empty-highway-asphalt-road-beautiful-sky_51195-3950.jpg"></div>
-                        </div>
-                    </section>
-                    <section class="ac-section">
-                        <div class="ac-settings">
-                            <form name="name-change" id="name-change-form" method="POST">
-                                <label>Логин</label><input type="text" class="ac-name-change">
-                                <label>Пароль</label><input type="password" class="ac-password">
-                                <label>Повторите пароль</label><input type="password" class="ac-password-repeat">
-                            </form>
-                            <input type="submit" value="Подтвердить" form="name-change">
-                        </div>
-                    </section>
-                    <section class="ac-section">
-                        <div class="ac-logout">
-                            <div class="ac-logout-text">Вы уверены, что хотите выйти из аккаунта?</div>
-                            <div class="ac-logout-button"><button>Выйти</button></div>
-                        </div>
-                    </section>
-                </div>
+                <section class="ac-section">
+                    <div class="ac-overview">
+                        <div class="ac-name">логин</div>
+                        <div class="ac-reg-date">Дата регистрации: dd-mm-yyyy</div>
+                        <div class="ac-check-counter">Количество заказов: n</div>
+                        <div class="ac-img"><img src="media/images/account-icon-transparent.jpg"></div>
+                    </div>
+                    <a class="ac-logout-button generic-button page-opener page1">Выйти</a>
+                </section>
             </div>
         </div>
     </div>
@@ -102,7 +75,7 @@
                 <li>Аккаунт:</li>
                 <li><a href="profile.html">Личный кабинет</a></li>
                 <li><a href="cards.html">Привязанные карты</a></li>
-                <li><a href="login.html">Вход/Выход/Регистрация</a></li>
+                <li><a href="login.html">Вход/Регистрация</a></li>
             </ul>
             <ul class="footer-link">
                 <li>Сайт:</li>
@@ -114,5 +87,14 @@
         </div>
     </footer>
     <h1 class="wow">Мы не рассматривали вариант существования вашего устройства.</h1>
+    <section class="page page1">
+        <div class="page__container">
+            <i class="fas fa-window-close page-closer page1"></i>
+            <div class="ac-logout-page-content">
+                <div class="ac-logout-text">Вы уверены, что хотите выйти из аккаунта?</div>
+                <a class="ac-logout-button generic-button">Выйти</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
