@@ -241,13 +241,14 @@ header{
 .cat-item{
     height: 43vh;
     display: grid;
-    grid-template-rows: 20% 45% 10% 15% 10%;
+    grid-template-rows: 10% 70% 10% 10%;
     padding: 10px;
     border: #1C1B22 solid 1px;
     border-radius: 10px;
     background-color: #36353E;
+    width: 24vw;
 }
-.cat-item div:nth-child(3), .cat-item div:nth-child(5){
+.cat-item div:nth-child(2), .cat-item div:nth-child(4){
     border-bottom: 1px #1C1B22 solid;
     border-top: 1px #1C1B22 solid;
 }
@@ -256,7 +257,7 @@ header{
     font-size: larger;
 }
 .cat-image img{
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     width: 100%;
 }
@@ -264,12 +265,6 @@ header{
     color: #FBFF45;
     font-size: larger;
     text-align: center;
-}
-.cat-desc{
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
 }
 .page-opener{
     cursor: pointer;
@@ -279,7 +274,7 @@ i.page-opener{
     width: 20px;
     height: 20px;
 }
-.page-closer{
+i.page-closer{
     width: 30px;
     height: 30px;
     font-size: x-large;
@@ -400,8 +395,9 @@ i.page-opener{
     justify-content: center;
     align-items: center;
     font-size: 2vh;
+    cursor: pointer;
 }
-.ac-logout-button{
+.g-button-red{
     border: 3px solid salmon;
     color: salmon;
 }
@@ -457,7 +453,11 @@ footer{
     border-radius: 10px;
     border: 1px solid #1C1B22;
     height: fit-content;
-    width: 60vw;
+    min-width: 40vw;
+    max-width: 80vw;
+}
+.page__container h2{
+    text-align: center;
 }
 .page__container::-webkit-scrollbar{
     width: 0;
@@ -496,13 +496,36 @@ footer{
 }
 .new-page-content .new-image img{
     max-height: 400px;
-    object-fit: contain;
 }
 .new-page-content .new-description{
     text-align: justify;
     overflow-wrap: break-word;
     overflow: visible;
     display: block;
+}
+.car-page{
+    display: flex;
+    flex-direction: column;
+}
+.car-page__buttons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+.car-page__buttons a{
+    margin: 0 10px;
+}
+.fl-page-content{
+    display: flex;
+}
+.fel-car{
+    height: 40vh;
+    max-width: 20vw;
+}
+.fel-car img{
+    object-fit: contain;
+    width: 100%;
 }
 .page.-visible{
     display: flex;
@@ -627,6 +650,12 @@ footer{
     }
     .page__container{
         width: 100vw;
+    }
+    .fl-page-content{
+        flex-direction: column;
+    }
+    .fel-car{
+        max-width: 100%;
     }
 }
 @media screen and (max-width: 380px){
