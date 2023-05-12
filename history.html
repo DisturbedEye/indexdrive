@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <title>Филиалы</title>
+    <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
+    <title>Бронирование</title>
+    <script>
+        function loadScript(url)
+        {    
+            let head = document.getElementsByTagName('head')[0];
+            let script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            head.appendChild(script);
+        }
+        loadScript("static/generic.js");
+    </script>
 </head>
 <body>
     <header>
@@ -21,7 +33,7 @@
                 <a href="profile.html">ЛК</a>
             </div>
             <div class="account">
-                <a href="profile.html">Имя</a>
+                <a href="profile.html" class="account-link">Имя</a>
             </div>
             <a class="menu-button"><i class="fas fa-th-list"></i></a>
         </div>
@@ -29,20 +41,17 @@
     <div class="side-menu__trigger"></div>
     <div class="side-menu">
         <div class="side-menu__container">
-            <a href="cards.html"></a>
-            <a href="booking.html"></a>
-            <a href="branches.html"></a>
-            <a href="booking.html"></a>
-            <a href="profile.html"></a>
+            <a href="cards.html">Карты</a>
+            <a href="booking.html">Бронирование</a>
+            <a href="history.html">История бронирования</a>
+            <a href="car-select.html" class="replacements">Автомобили</a>
+            <a href="branches.html" class="replacements">Филиалы</a>
+            <a href="profile.html" class="replacements">ЛК</a>
         </div>
     </div>
     <div class="content">
         <div class="content__container">
-            <h2>История бронирования пользователя логин</h2>
-            <div class="history">
-                <div class="his-name">наименование</div>
-                <div class="his-details">детиалпфыв</div>
-            </div>
+            
         </div>
     </div>
     <footer>
@@ -55,18 +64,18 @@
                 <li>Аккаунт:</li>
                 <li><a href="profile.html">Личный кабинет</a></li>
                 <li><a href="cards.html">Привязанные карты</a></li>
-                <li><a href="login.html">Вход/Выход/Регистрация</a></li>
+                <li><a href="login.html">Вход/Регистрация</a></li>
             </ul>
             <ul class="footer-link">
                 <li>Сайт:</li>
                 <li><a href="booking.html">Бронирование</a></li>
                 <li><a href="history.html">История бронирования</a></li>
                 <li><a href="branches.html">Филиалы</a></li>
+                <li><a href="car-select.html">Автомобили</a></li>
                 <li><a href="index.html">Главная</a></li>
             </ul>
         </div>
     </footer>
     <h1 class="wow">Мы не рассматривали вариант существования вашего устройства.</h1>
-    <script src="static/show_page.js"></script>
 </body>
 </html>

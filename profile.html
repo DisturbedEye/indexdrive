@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
-    <title>Индекс Драйв</title>
+    <title>Профиль</title>
     <script>
         function loadScript(url)
         {    
@@ -17,6 +17,7 @@
             head.appendChild(script);
         }
         loadScript("static/generic.js");
+        loadScript("static/profile_only.js")
     </script>
 </head>
 <body>
@@ -43,7 +44,7 @@
         <div class="side-menu__container">
             <a href="cards.html">Карты</a>
             <a href="booking.html">Бронирование</a>
-            <a href="history">История бронирования</a>
+            <a href="history.html">История бронирования</a>
             <a href="car-select.html" class="replacements">Автомобили</a>
             <a href="branches.html" class="replacements">Филиалы</a>
             <a href="profile.html" class="replacements">ЛК</a>
@@ -55,12 +56,12 @@
                 <section class="ac-section">
                     <h2>Аккаунт:</h2>
                     <div class="ac-overview">
-                        <div id="ac-surname">Фамилия</div>
-                        <div id="ac-name">Имя</div>
-                        <div id="ac-sec-name">Отчество</div>
-                        <div id="passport-id">Номер паспорта: nnnnnn nnnn</div>
-                        <div id="ac-phone">Телефон: +n-(nnn)-nnn-nn-nn</div>
-                        <div id="ac-bd-date">Дата рождения: dd-mm-yyyy</div>
+                        <div class="ac-labels">Фамилия: </div><div id="ac-surname">Фамилия</div>
+                        <div class="ac-labels">Имя: </div><div id="ac-name">Имя</div>
+                        <div class="ac-labels">Отчество: </div><div id="ac-sec-name">Отчество</div>
+                        <div class="ac-labels">Номер паспорта: </div><div id="passport-id">nnnnnn nnnn</div>
+                        <div class="ac-labels">Телефон: </div><div id="ac-phone">+n-(nnn)-nnn-nn-nn</div>
+                        <div class="ac-labels">Дата рождения: </div><div id="ac-bd-date">dd-mm-yyyy</div>
                         <div id="cards">Карты:
                             ************1252
                             ************6423
@@ -96,6 +97,7 @@
                 <li><a href="booking.html">Бронирование</a></li>
                 <li><a href="history.html">История бронирования</a></li>
                 <li><a href="branches.html">Филиалы</a></li>
+                <li><a href="car-select.html">Автомобили</a></li>
                 <li><a href="index.html">Главная</a></li>
             </ul>
         </div>
