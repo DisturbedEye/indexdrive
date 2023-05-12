@@ -8,8 +8,8 @@ dom.querySelectorAll(".page-opener").forEach(location => {
             let bridges = dom.getElementsByClassName(targetClass.split(' ').find(element => element.match(/page\d+/)));
             for (const bridge of bridges){
                 bridge.classList.add("-visible");
+                dom.body.style.overflow = "hidden";
             }
-            dom.body.style.overflow = "hidden";
         }
     });
 });
@@ -20,8 +20,8 @@ dom.querySelectorAll(".page-closer").forEach(location => {
             let bridges = dom.getElementsByClassName(targetClass.split(' ').find(element => element.match(/page\d+/)));
             for (const bridge of bridges){
                 bridge.classList.remove("-visible");
+                dom.body.style.overflow = "auto";
             }
-            dom.body.style.overflow = "auto";
         }
     });
 });
@@ -32,8 +32,8 @@ dom.querySelectorAll(".page").forEach(location => {
             let bridges = dom.getElementsByClassName(targetClass.split(' ').find(element => element.match(/page\d+/)));
             for (const bridge of bridges){
                 bridge.classList.remove("-visible");
+                dom.body.style.overflow = "auto";
             }
-            dom.body.style.overflow = "auto";
         }
     });
 });
@@ -42,16 +42,16 @@ dom.addEventListener("keydown", (e) => {
         let bridges = dom.getElementsByClassName("page");
         for (const bridge of bridges){
             bridge.classList.remove("-visible");
+            dom.body.style.overflow = "auto";
         }
-        dom.body.style.overflow = "auto";
     }
 });
 document.addEventListener("backbutton", () => {
     let bridges = dom.getElementsByClassName("page");
         for (const bridge of bridges){
             bridge.classList.remove("-visible");
+            dom.body.style.overflow = "auto";
         }
-        dom.body.style.overflow = "auto";
 });
 /////////Show Menu//////////
 function slideMenu(menu, b){
@@ -74,3 +74,5 @@ window.addEventListener('mouseover', (e) => {
         slideMenu(menu, 2);
     }
 });
+////////Price Calc/////////
+const k = 324;
