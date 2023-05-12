@@ -105,7 +105,7 @@ header{
     display: flex;
     justify-content: flex-end;
     right: -20vw;
-    bottom: 0;
+    top: 0;
     background-color: #36353E;
     border-left: #26252E 1px solid;
     transition: right 0.2s ease-in;
