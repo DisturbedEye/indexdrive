@@ -74,5 +74,37 @@ window.addEventListener('mouseover', (e) => {
         slideMenu(menu, 2);
     }
 });
-////////Price Calc/////////
+/////////Price Calc/////////
 const k = 324;
+/////////Login/////////
+function validate(){
+    f = dom.forms.reg;
+    if (f.ps.value !== f.psr.value){
+        let ermsg = dom.createElement("div");
+        ermsg.className = "error-message";
+        ermsg.innerHTML = "Несовпадающие пароли";
+        dom.querySelector(".content__container").appendChild(ermsg);
+        setTimeout(()=>{
+            dom.querySelector(".content__container").removeChild(ermsg);
+        }, 5000)
+    }
+    else if (!f.passport.value.match(/\d{6} \d{4}/)){
+        let ermsg = dom.createElement("div");
+        ermsg.className = "error-message";
+        ermsg.innerHTML = "Неправильный формат паспорта";
+        dom.querySelector(".content__container").appendChild(ermsg);
+    }
+    else{
+        let result = "";
+        for (item of f){
+            result = result.concat(item.value).concat(";");
+        }
+        sessionStorage.setItem("acData", result);
+        location.href = "index.html";
+    }
+}
+let nname = null;
+if (sessionStorage.getItem("acData") !== null){
+    nname = sessionStorage.getItem("acData").split(";")[1];
+    dom.querySelector(".account a").innerHTML = nname;
+}
