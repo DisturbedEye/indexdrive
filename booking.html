@@ -17,6 +17,7 @@
             head.appendChild(script);
         }
         loadScript("static/generic.js");
+        loadScript("static/car_related_things.js");
     </script>
 </head>
 <body>
@@ -33,7 +34,7 @@
                 <a href="profile.html">ЛК</a>
             </div>
             <div class="account">
-                <a href="profile.html" class="account-link">Имя</a>
+                <a href="profile.html" class="account-link">Гость</a>
             </div>
             <a class="menu-button"><i class="fas fa-th-list"></i></a>
         </div>
@@ -51,7 +52,14 @@
     </div>
     <div class="content">
         <div class="content__container">
-            
+            <h2>Бронирование</h2>
+            <div class="bk-list">
+                <div class="bk-list__container">
+                </div>
+                <div class="bk-receipt">
+                    <div id="total-price"></div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
