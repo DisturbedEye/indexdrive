@@ -74,8 +74,6 @@ window.addEventListener('mouseover', (e) => {
         slideMenu(menu, 2);
     }
 });
-/////////Price Calc/////////
-const k = 324;
 /////////Login/////////
 function validate(){
     f = dom.forms.reg;
