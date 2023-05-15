@@ -179,12 +179,16 @@ const container = dom.getElementsByClassName("bk-list__container")[0];
 if (container !== undefined){
     let total_price = 0;
     if (sessionStorage.getItem("chosencars")){
+        let q = 1;
         for (item of sessionStorage.getItem("chosencars").split(";")){
             if (item === "") { break }
-            let i = "car".concat(item.match(/\d+/)); // берет машину
-            let index = item.match(/\d+/); // берет id машины
+            if (!item.match(/f[1-5]/)){
+                item = item.concat("f1");
+            }
+            let i = "car".concat(item.match(/\d+/g)[0]); // берет машину
+            let index = item.match(/\d+/g)[0]; // берет id машины
             element = dom.createElement("a");
-            element.className = "bk-car";
+            element.className = "bk-car cars page-opener page".concat(q);
             container.appendChild(element);
             for (v of ["image", "name", "price"]){
                 if (v == "image"){
@@ -193,13 +197,11 @@ if (container !== undefined){
                 else{
                     item = dom.createElement("div");
                 }
-                item.className = "car-".concat(v).concat(" cars ").concat(i);
+                item.className = "car-".concat(v).concat(" ").concat(i).concat(" page-opener page").concat(q);
                 element.appendChild(item);
                 make(item);
             }
-            for (let l = 0; l < sessionStorage.getItem("chosencars").split(";").length - 1; l++){
-                total_price += carsList[index-1]["price"];
-            }
+            total_price += carsList[index-1]["price"];
             tp = dom.getElementById("total-price");
             tp.innerHTML = total_price;
         }

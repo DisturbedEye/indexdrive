@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="icon" href="media/images/logo.ico">
     <title>Регистрация</title>
     <script>
         function loadScript(url)
@@ -49,10 +50,10 @@
             <a href="profile.html" class="replacements">ЛК</a>
         </div>
     </div>
-    <div class="content">
+    <div class="content content-ft">
         <div class="content__container">
             <h2>Авторизация</h2>
-            <form name="login">
+            <form name="login" class="only-form">
                 <div class="form-text">Телефон</div><input type="tel" required name="phone">
                 <div class="form-text">Пароль</div><input type="password" required name="ps">
                 <input type="button" class="generic-button" onclick=lvalidate() value="Отправить">

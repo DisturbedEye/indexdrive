@@ -74,6 +74,18 @@ window.addEventListener('mouseover', (e) => {
         slideMenu(menu, 2);
     }
 });
+let b = dom.querySelector(".side-menu__container a:nth-child(2)");
+let i = dom.createElement("i");
+i.className = "cars-amount";
+b.appendChild(i);
+if (sessionStorage.getItem("chosencars") === null){
+    i.innerHTML.display = "none";
+}
+else{
+    
+    i.innerHTML = sessionStorage.getItem("chosencars").split(";").length-1;
+}
+
 /////////Login/////////
 function validate(){
     const f = dom.forms.reg;
