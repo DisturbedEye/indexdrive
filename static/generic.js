@@ -76,7 +76,7 @@ window.addEventListener('mouseover', (e) => {
 });
 /////////Login/////////
 function validate(){
-    f = dom.forms.reg;
+    const f = dom.forms.reg;
     if (f.ps.value !== f.psr.value){
         let ermsg = dom.createElement("div");
         ermsg.className = "error-message";
@@ -98,11 +98,32 @@ function validate(){
             result = result.concat(item.value).concat(";");
         }
         sessionStorage.setItem("acData", result);
+        sessionStorage.setItem("activeData", result);
         location.href = "index.html";
     }
 }
+function lvalidate(){
+    const f = dom.forms.login;
+    let data = sessionStorage.getItem("acData");
+    let phone = data.split(";")[4];
+    let ps = data.split(";")[6];
+    if (f.phone.value !== phone || f.ps.value !== ps){
+        let ermsg = dom.createElement("div");
+        ermsg.className = "error-message";
+        ermsg.innerHTML = "Неправильный пароль или телефон";
+        dom.querySelector(".content__container").appendChild(ermsg);
+    }
+    else{
+        sessionStorage.setItem("activeData", sessionStorage.getItem("acData"));
+        location.href = "index.html";
+    }
+}
+function onlogout(){
+    sessionStorage.setItem("activeData", "");
+    location.href = "index.html";
+}
 let nname = null;
-if (sessionStorage.getItem("acData") !== null){
-    nname = sessionStorage.getItem("acData").split(";")[1];
+if (sessionStorage.getItem("activeData") != null && sessionStorage.getItem("activeData") != ""){
+    nname = sessionStorage.getItem("activeData").split(";")[1];
     dom.querySelector(".account a").innerHTML = nname;
 }

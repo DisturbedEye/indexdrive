@@ -20,13 +20,9 @@ if (!sessionStorage.getItem("session_start")){
     bannertextstyle = banner_text.style;
     headerstyle.top = "-10vh";
     headerstyle.animation = "1s slideintop alternate";
-    headerstyle.animationDelay = "1s";
     bannertextstyle.visibility = "hidden";
     bannertextstyle.animation = "1s textslide alternate";
-    bannertextstyle.animationDelay = "1s";
 
-    setTimeout(() => {
-        headerstyle.top = "0";
-        bannertextstyle.visibility = "visible";
-    }, 1000);
+    headerstyle.top = "0";
+    bannertextstyle.visibility = "visible";
 }
