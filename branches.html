@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="static/fontawesome-free-5.14.0-web/css/all.css">
-    <link rel="icon" href="media/images/logo.ico">
+    <link rel="icon" href="static/favicon.ico">
     <title>Филиалы</title>
     <script>
         function loadScript(url)
@@ -18,7 +18,6 @@
             head.appendChild(script);
         }
         loadScript("static/generic.js");
-        loadScript("static/car_related_things.js")
     </script>
 </head>
 <body>
@@ -32,10 +31,10 @@
             <div class="menu">
                 <a href="branches.html">Филиалы</a>
                 <a href="car-select.html">Автомобили</a>
-                <a href="profile.html">ЛК</a>
+                <a href="booking.html" class="bro">Бронирование</a>
             </div>
             <div class="account">
-                <a href="profile.html">Гость</a>
+                <a href="profile.html" class="account-link">Гость</a>
             </div>
             <a class="menu-button"><i class="fas fa-th-list"></i></a>
         </div>
@@ -43,9 +42,9 @@
     <div class="side-menu__trigger"></div>
     <div class="side-menu">
         <div class="side-menu__container">
-            <a href="cards.html">Карты</a>
-            <a href="booking.html">Бронирование</a>
+            <a href="booking.html" class="replacements bro">Бронирование</a>
             <a href="history.html">История бронирования</a>
+            <a href="cards.html">Карты</a>
             <a href="car-select.html" class="replacements">Автомобили</a>
             <a href="branches.html" class="replacements">Филиалы</a>
             <a href="profile.html" class="replacements">ЛК</a>
@@ -114,21 +113,24 @@
             <i class="fas fa-window-close page-closer page1"></i>
             <h2>Здесь доступны:</h2>
             <div class="fl-page-content">
-                <a class="fel-car">
-                    <img class="car-image car6 cars carchoice c6 f1">
+                <div class="fel-car">
+                    <img class="car-image car6 cars">
                     <div class="car-name car6 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car6 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car8 cars carchoice c8 f1">
+                    <a class="generic-button carchoice c6 f1" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car8 cars">
                     <div class="car-name car8 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car8 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car2 cars carchoice c2 f1">
+                    <a class="generic-button carchoice c8 f1" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car2 cars">
                     <div class="car-name car2 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car2 cars">NNN</i></div>
-                </a>
+                    <a class="generic-button carchoice c2 f1" href="booking.html">Выбрать</a>
+                </div>
             </div>
         </div>
     </section>
@@ -137,21 +139,24 @@
             <i class="fas fa-window-close page-closer page2"></i>
             <h2>Здесь доступны:</h2>
             <div class="fl-page-content">
-                <a class="fel-car">
-                    <img class="car-image car11 cars carchoice c11 f2">
+                <div class="fel-car">
+                    <img class="car-image car11 cars">
                     <div class="car-name car11 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car11 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car12 cars carchoice c12 f2">
+                    <a class="generic-button carchoice c11 f2" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car12 cars">
                     <div class="car-name car12 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car12 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car5 cars carchoice c5 f2">
+                    <a class="generic-button carchoice c12 f2" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car5 cars">
                     <div class="car-name car5 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car5 cars">NNN</i></div>
-                </a>
+                    <a class="generic-button carchoice c5 f2" href="booking.html">Выбрать</a>
+                </div>
             </div>
         </div>
     </section>
@@ -160,21 +165,24 @@
             <i class="fas fa-window-close page-closer page3"></i>
             <h2>Здесь доступны:</h2>
             <div class="fl-page-content">
-                <a class="fel-car">
-                    <img class="car-image car8 cars carchoice c8 f3">
+                <div class="fel-car">
+                    <img class="car-image car8 cars">
                     <div class="car-name car8 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car8 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car3 cars carchoice c3 f3">
+                    <a class="generic-button carchoice c8 f3" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car3 cars">
                     <div class="car-name car3 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car3 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car1 cars carchoice c1 f3">
+                    <a class="generic-button carchoice c3 f3" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car1 cars">
                     <div class="car-name car1 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car1 cars">NNN</i></div>
-                </a>
+                    <a class="generic-button carchoice c1 f3" href="booking.html">Выбрать</a>
+                </div>
             </div>
         </div>
     </section>
@@ -183,21 +191,24 @@
             <i class="fas fa-window-close page-closer page4"></i>
             <h2>Здесь доступны:</h2>
             <div class="fl-page-content">
-                <a class="fel-car">
-                    <img class="car-image car4 cars carchoice c4 f4">
+                <div class="fel-car">
+                    <img class="car-image car4 cars">
                     <div class="car-name car4 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car4 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car7 cars carchoice c7 f4">
+                    <a class="generic-button carchoice c4 f4" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car7 cars">
                     <div class="car-name car7 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car7 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car9 cars carchoice c9 f4">
+                    <a class="generic-button carchoice c7 f4" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car9 cars">
                     <div class="car-name car9 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car9 cars">NNN</i></div>
-                </a>
+                    <a class="generic-button carchoice c9 f4" href="booking.html">Выбрать</a>
+                </div>
             </div>
         </div>
     </section>
@@ -206,21 +217,24 @@
             <i class="fas fa-window-close page-closer page5"></i>
             <h2>Здесь доступны:</h2>
             <div class="fl-page-content">
-                <a class="fel-car">
-                    <img class="car-image car10 cars carchoice c10 f5">
+                <div class="fel-car">
+                    <img class="car-image car10 cars">
                     <div class="car-name car10 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car10 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car6 cars carchoice c6 f5">
+                    <a class="generic-button carchoice c10 f5" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car6 cars">
                     <div class="car-name car6 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car6 cars">NNN</i></div>
-                </a>
-                <a class="fel-car">
-                    <img class="car-image car5 cars carchoice c5 f5">
+                    <a class="generic-button carchoice c6 f5" href="booking.html">Выбрать</a>
+                </div>
+                <div class="fel-car">
+                    <img class="car-image car5 cars">
                     <div class="car-name car5 cars">PlaceHolder</div>
                     <div>от <i class="accent-text car-price car5 cars">NNN</i></div>
-                </a>
+                    <a class="generic-button carchoice c5 f5" href="booking.html">Выбрать</a>
+                </div>
             </div>
         </div>
     </section>
