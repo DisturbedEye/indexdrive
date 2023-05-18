@@ -50,9 +50,9 @@ body::-webkit-scrollbar{
     flex-direction: column;
     align-content: center;
 }
-.content__container h2{
+h2, h3, h4{
     text-align: center;
-    padding: 10px 0;
+    padding: 3px 0;
 }
 .carchoice{
     cursor: pointer;
@@ -129,6 +129,28 @@ i.cars-amount{
     width: 20px;
     border-radius: 100%;
     margin-left: 5px;
+}
+.generic-button{
+    padding: 5px;
+    border: var(--orangeaccent) 3px solid;
+    border-radius: 10px;
+    color: var(--orangeaccent);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: 600;
+    height: fit-content;
+}
+.g-button-red{
+    border: 3px solid var(--redaccent);
+    color: var(--redaccent);
+}
+.disabled-text{
+    color: grey;
+    font-style: normal;
 }
 
 
@@ -450,7 +472,7 @@ header{
 .bk-list{
     width: 100%;
     display: grid;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 55% auto;
     gap: 20px;
     padding: 0 10px;
 }
@@ -478,13 +500,14 @@ header{
     color: var(--orangeaccent);
 }
 .bk-receipt{
-    border: 1px rgb(0,0,0,0.7) solid;
+    border: 5px rgb(0,0,0,0.7) solid;
     border-radius: 10px;
     display: grid;
     grid-auto-flow: row;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     width: -webkit-fill-available;
+    height: fit-content;
     padding: 10px;
     margin: 0 20px;
     gap: 10px;
@@ -507,6 +530,19 @@ header{
 #submit{
     grid-column: 1 / 3;
 }
+.progress-bar{
+    display: flex;
+    transition: background-position .3s ease-out, background-size .3s ease-out;
+    background: linear-gradient(to left, var(--orangeaccent), var(--orangeaccent));
+    background-repeat: no-repeat;
+    background-position: 200% 0;
+    background-size: 220% 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(0,0,0,0.5);
+}
 
 
 /* ///////ACCOUNT//////// */
@@ -514,7 +550,6 @@ header{
 
 .account-show{
     min-height: 90vh;
-    width: 50vw;
     display: grid;
     grid-auto-flow: column;
 }
@@ -546,36 +581,16 @@ header{
     padding: 20px;
 }
 #cards{
-    white-space: pre-line;
     border: #1C1B22 1px solid;
     border-radius: 10px;
     padding: 15px;
 }
-.generic-button{
-    padding: 5px;
-    border: var(--orangeaccent) 3px solid;
-    border-radius: 10px;
-    color: var(--orangeaccent);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    cursor: pointer;
-    font-weight: 600;
+.ac-card{
     height: fit-content;
 }
 .ac-overview .ac-logout-button{
     margin-top: 20px;
     grid-column: 1 / 3;
-}
-.g-button-red{
-    border: 3px solid var(--redaccent);
-    color: var(--redaccent);
-}
-.disabled-text{
-    color: grey;
-    font-style: normal;
 }
 
 
@@ -595,7 +610,22 @@ header{
 /* ///////CARDS//////// */
 
 
-/*
+.cards-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    padding: 10px;
+    background-color: #36353E;
+    border-radius: 10px;
+    border: #1C1B22 1px solid;
+    border-top: 10px solid #1C1B22;
+}
+.card *{
+    margin: 5px;
+}
 
 
 /* ///////ETC//////// */
@@ -623,6 +653,37 @@ footer{
 }
 .footer-link li:first-child{
     padding-bottom: 10px;
+}
+.acbk-list, .hbk-list{
+    margin: 10px;
+}
+.acbk-list__container, .hbk-list__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.acbksc, .hbksc{
+    background-color: #36353E;
+    padding: 10px;
+    border:rgba(0, 0, 0, 0.7) 1px solid;
+    border-radius: 10px;
+}
+.acbkit, .hbkit{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+}
+.acbkit h4, .hbkit h4{
+    grid-column: 1 / 3;
+    border-top: #1C1B22 2px solid;
+}
+.acbkel, .hbkel{
+    padding: 10px;
+    border-top: #1C1B22 1px solid;
+}
+.acbktxt, .hbktxt{
+    padding: 10px;
+    border-top: #1C1B22 1px solid;
 }
 .wow{
     display: none;
@@ -652,9 +713,6 @@ footer{
     height: fit-content;
     min-width: 40vw;
     max-width: 80vw;
-}
-.page__container h2{
-    text-align: center;
 }
 .page__container::-webkit-scrollbar{
     width: 0;
@@ -861,6 +919,9 @@ footer{
     .news, .catalog{
         grid-template-columns: 1fr 1fr;
     }
+    .acbk-list__container{
+        grid-template-columns: 1fr 1fr;
+    }
     .account-show{
         grid-template-columns: 1fr;
         margin-left: 0;
@@ -970,6 +1031,9 @@ footer{
         width: fit-content;
     }
     .bk-page-parameters{
+        grid-template-columns: 1fr;
+    }
+    .acbk-list__container{
         grid-template-columns: 1fr;
     }
 }
