@@ -114,13 +114,18 @@ dom.querySelectorAll(".carchoice").forEach( (loc) => {
         let targetClass = e.target.className;
         let id = targetClass.match(/c\d+/); // берет id машины
         id = id[0].toString();
+        let f = null;
+        if (targetClass.match(/f\d+/)){
+            let f = targetClass.match(/f\d+/); // берет филиал
+            f = f[0].toString();
+        }
         if (sessionStorage.getItem("chosencars") !== null){
             if (!sessionStorage.getItem("chosencars").includes(id)){
-                sessionStorage.setItem("chosencars", sessionStorage.getItem("chosencars").concat(id).concat(";"));
+                sessionStorage.setItem("chosencars", sessionStorage.getItem("chosencars").concat(id).concat(f).concat(";"));
             }
         }
         else{
-            sessionStorage.setItem("chosencars", id.concat(";"));
+            sessionStorage.setItem("chosencars", id.concat(f).concat(";"));
         }
         changeCarsAmount();
     });
